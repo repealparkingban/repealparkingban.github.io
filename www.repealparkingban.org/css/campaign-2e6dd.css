@@ -1,0 +1,76 @@
+﻿/* New mobile menu */
+/* Enhanced Mobile Menu Button */
+.menu-open-button .menu-toggle { background: none; border: none; cursor: pointer; padding: 8px; position: relative; z-index: 10001; margin-right: 10px; }
+.hamburger { width: 28px; height: 20px; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
+.hamburger span { display: block; height: 3px; width: 100%; background: currentColor; border-radius: 2px; transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); transform-origin: center; }
+
+/* X Animation */
+.menu-toggle.active .hamburger span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+.menu-toggle.active .hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.menu-toggle.active .hamburger span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+/* Enhanced Overlay */
+.overlay { opacity: 0.98; backdrop-filter: blur(8px); transition: all 0.3s ease; }
+
+/* Fix z-index layering */
+#navigation { z-index: 10000 !important; }
+.overlay { z-index: 9999 !important; }
+.menu-toggle { z-index: 10001 !important; }
+
+/* Clean overlay menu styling */
+.overlay-menu li { text-align: left; }
+
+.overlay-menu a { display: inline-block; padding: 24px 0; text-decoration: none; font-size: 1.4em !important; font-weight: 500; transition: all 0.3s ease; position: relative; background-image: linear-gradient(45deg, currentColor, currentColor); background-size: 0% 2px; background-repeat: no-repeat; background-position: left bottom; padding-bottom: 22px; /* Add space for the underline */ }
+
+.overlay-menu a:hover { /*    color: #ff6b6b;*/ text-decoration: none; background-size: 100% 2px; }
+
+.overlay-menu li a { padding: clamp(16px, 4vw, 24px) 0 4px; text-decoration: none !important; }
+
+/* Enhanced Overlay with faster slide-up animation */
+.overlay { opacity: 0; backdrop-filter: blur(8px); transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Faster */ transform: translateY(20px); /* Reduced distance */ visibility: hidden; }
+
+.overlay.menu-visible { opacity: 0.98; transform: translateY(0); visibility: visible; }
+
+/* Fix top item being hidden */
+.overlay-nav { padding: 20px 20px 0px; /* Remove the top padding since JS will handle it */ /*height: 100%;*/ overflow-y: auto; }
+
+
+
+/* Fix overlay layout with flexbox */
+.overlay { display: flex; flex-direction: column; }
+
+.overlay-nav { padding: 20px 20px 20px; /* Reduced bottom padding */ flex: 1; /* Take available space but don't force full height */ overflow-y: auto; /* Remove: height: 100%; */ }
+
+/* Style the social section */
+#overlay-social { max-width: 350px; padding: 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); /* Optional separator line */ }
+
+/* Style the social section */
+#overlay-social { padding: 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); max-width: 350px; /* Limit width */ margin: 0 auto; /* Center the container */ width: 100%; /* Ensure it takes available space up to max-width */ }
+
+/* Style social media icons */
+#overlay-social a { display: inline-block; margin: 0 8px; font-size: 1.2em; transition: color 0.2s ease; }
+
+#overlay-social a:hover { /*    color: #ff6b6b;*/ }
+
+/* Style the close menu link */
+#overlay-social #close-overlay { display: inline-block; /*    color: #666;*/ text-decoration: none; font-size: 0.9em; margin-top: 15px; padding: 8px 16px; border: 1px solid #ddd; border-radius: 4px; transition: all 0.2s ease; }
+
+#overlay-social #close-overlay:hover { /* color: #ff6b6b;*/ border-color: #ff6b6b; }
+
+
+
+
+/* new mobile menu end */
+
+.menu li a { font-size: clamp(13px, 1.2vw, 17px) !important; /* Scale vertical padding with font size */ padding-left: clamp(8px, 1.5vw, 35px) !important; padding-right: clamp(8px, 1.5vw, 35px) !important; line-height: 1.1 !important; }
+
+.menu { height: auto !important; min-height: auto !important; }
+
+/* More specific selector overrides the media query */
+@@media screen and (max-width: 959px) {
+    #navigation .menu { display: flex !important; }
+}
+
+@@media screen and (max-width: 500px) {
+    #navigation .menu { display: none !important; }
+}

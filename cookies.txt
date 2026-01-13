@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.repealparkingban.org	TRUE	/	FALSE	1999999999	CampaignSites-CSRF	CfDJ8MZvT7F0fo5CpRzNSgBlsKoqJJBkm-SpHxmqL6gIZH-HO9AlYv359fBL1t7dFQZ6UjMHVonyb0hc0vG9j5auZ4wC7iO2H52-RwJ2CCbKfzdyFMLp_rlLS0n48OeH_8avTDN7X-_CxcWeJpBL1bQQZVs
+www.repealparkingban.org	TRUE	/	FALSE	1999999999	samesite	lax
+

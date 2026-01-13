@@ -1,0 +1,547 @@
+﻿/* Enhanced Volunteer Form CSS */
+
+/* ==========================================================================
+   ENHANCED FORM FIELD STYLING
+   ========================================================================== */
+
+/* Polished form field styling */
+.form-field {
+    /* Keep existing size and basic properties */
+    width: 100%;
+    padding: 18px 20px !important;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    font-family: inherit;
+    box-sizing: border-box;
+    
+    /* Enhanced styling with sophisticated effects */
+    background: rgba(248, 250, 252, 0.9);
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    
+    /* Subtle shadow effects */
+    box-shadow: 
+        0 2px 4px -1px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    
+    /* Smooth transitions */
+    transition: all 0.3s ease;
+    
+    /* Text styling */
+    color: #1e293b;
+}
+
+/* Enhanced focus state */
+.form-field:focus {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #009CDE !important;
+    box-shadow: 
+        0 0 0 3px rgba(59, 130, 246, 0.1),
+        0 4px 12px rgba(59, 130, 246, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transform: translateY(-1px);
+    outline: none !important;
+}
+
+/* Hover state */
+.form-field:hover:not(:focus) {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: #d1d5db;
+    box-shadow: 
+        0 2px 8px -2px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Special styling for select dropdowns */
+select.form-field {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 50px;
+}
+
+/* Error state styling - match contribution form exactly */
+.input-validation-error {
+    border: 1px solid #e25950 !important;
+    background-color: rgb(253, 236, 242) !important;
+}
+
+.input-validation-error:focus {
+    border: 2px solid #e25950 !important;
+    outline: none !important;
+}
+
+/* ==========================================================================
+   ENHANCED LABEL STYLING
+   ========================================================================== */
+
+/* Enhanced fieldLabel styles */
+.fieldLabel {
+    /* Position */
+    position: static !important;
+    transform: none !important;
+    
+    /* Box model */
+    display: block;
+    margin: 0 0 8px 0;
+    padding: 0;
+    
+    /* Typography */
+    font-family: 'Inter Tight', sans-serif !important;
+    font-size: clamp(14px, 1.6vw + 8.6px, 18px);
+    line-height: 1.2;
+    color: rgb(48, 49, 61);
+
+    font-weight:300;
+    
+    /* Behavior */
+    transition: color 0.2s ease-in-out;
+}
+
+/* Focus state - change color when form field is focused */
+.form-unit.is-focused .fieldLabel {
+    color: #009CDE;
+}
+
+/* Required field indicator */
+.req {
+    color: #e25950;
+    margin-left: 3px;
+    display: inline !important;
+}
+
+/* ==========================================================================
+   FORM LAYOUT AND STRUCTURE
+   ========================================================================== */
+
+/* Enhanced form group layout */
+.form-group {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-direction: row;
+    width: 100%;
+}
+
+.form-unit {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    min-width: 0;
+}
+
+/* Specific field adjustments */
+.zipUnit {
+    flex: 0 0 120px;
+    max-width: 120px;
+}
+
+#StateUnit {
+    flex: 0 0 200px;
+    max-width: 200px;
+}
+
+/* Maintain full width for address fields */
+#AddressUnit, #Address2Unit {
+    flex: 1 1 100%;
+}
+
+/* Enhanced validation error styling - match contribution form exactly */
+.field-validation-error {
+    color: #e25950;
+    font-size: 0.75em;
+    line-height: 1.2;
+    position: absolute;
+    bottom: -22px;
+    left: 5px;
+}
+
+/* Only add extra margin when error message is actually visible and has content */
+.form-group:has(.field-validation-error:not(:empty):not(.field-validation-valid)) {
+    margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   ENHANCED CHECKBOX STYLING
+   ========================================================================== */
+
+/* Enhanced checkbox container */
+.contact-options-container {
+    background-color: rgba(248, 250, 252, 0.9);
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+    padding: 24px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.contact-options-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact-option-item {
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    flex: 0 0 auto;
+    min-width: 0;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.contact-option-item:hover {
+    /* Simple hover without background or shadows */
+}
+
+.contact-option-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    accent-color: #3b82f6;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.contact-option-item label {
+    font-size: 15px;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    line-height: 1.4;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+/* ==========================================================================
+   ENHANCED BUTTON STYLING
+   ========================================================================== */
+
+/* Enhanced submit button */
+.formButton {
+    /* Enhanced styling to match form theme */
+    color: white;
+    padding: 18px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: clamp(16px, 3.5vw, 22px);
+    font-weight: 800;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    margin: 24px auto;
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    
+    /* Enhanced effects */
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(10px);
+    
+    transition: all 0.3s ease;
+    text-transform: none;
+    letter-spacing: 0.5px;
+}
+
+.formButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.3),
+        0 4px 12px rgba(0, 0, 0, 0.1);
+    /*background: linear-gradient(135deg, #56C44F 0%, #4cac55 100%);*/
+}
+
+.formButton:active {
+    transform: translateY(0);
+    /*background: linear-gradient(135deg, #4cac55 0%, #56C44F 100%);*/
+}
+
+/* ==========================================================================
+   FORM WRAPPER AND CONTAINER
+   ========================================================================== */
+
+#formWrapper {
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+/* ==========================================================================
+   VALIDATION AND ERROR STATES
+   ========================================================================== */
+
+.validation-summary-errors {
+    color: #e25950;
+    margin-top: 20px;
+}
+
+.validation-summary-errors ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.redOutline {
+    border: 1px solid #e25950 !important;
+    box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: row; /* Keep row layout like contribution form */
+        gap: 10px;
+        margin-bottom: 16px;
+        width: 100%;
+    }
+    
+    .form-unit {
+        margin: 0;
+        min-width: 0; /* Allow flex items to shrink below content size */
+    }
+    
+    .form-field {
+        padding: 16px 18px !important;
+    }
+    
+    /* Adjust specific field widths for mobile */
+    #CityUnit {
+        flex: 2;
+    }
+    
+    #StateUnit {
+        flex: 1;
+        max-width: 200px;
+    }
+    
+    .zipUnit {
+        flex: 1;
+        max-width: none; /* Remove fixed width */
+        min-width: 80px; /* Ensure minimum width for ZIP */
+    }
+    
+    .contact-options-container {
+        padding: 20px;
+        margin: 16px 0;
+    }
+    
+    .contact-options-list {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    
+    .contact-option-item {
+        padding: 12px;
+        flex: 0 0 auto;
+        width: auto;
+        white-space: normal;
+    }
+    
+    .contact-option-item label {
+        font-size: 14px;
+        white-space: normal;
+    }
+}
+
+/* Very small mobile devices - still maintain row layout */
+@media (max-width: 480px) {
+    .form-group {
+        flex-direction: row; /* Keep row layout */
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+    
+    .form-field {
+        padding: 14px 16px !important;
+        font-size: 16px; /* Prevent zoom on iOS */
+        min-width: 0; /* Allow inputs to shrink */
+    }
+    
+    .fieldLabel {
+        font-size: 14px;
+        margin: 2px 0 6px 0;
+    }
+    
+    /* City/State/Zip row adjustments for small screens */
+    #CityUnit {
+        flex: 2.5;
+    }
+    
+    #StateUnit {
+        flex: 0 0 110px;
+        max-width: 110px;
+    }
+    
+    .zipUnit {
+        flex: 0 0 95px;
+        max-width: 95px;
+        min-width: 85px;
+    }
+    
+    .formButton {
+        padding: 16px 24px;
+        font-size: 16px;
+        margin: 20px auto;
+    }
+}
+
+/* Ultra-small screens - maintain row for most fields */
+@media (max-width: 350px) {
+    .form-field {
+        padding: 12px 14px !important;
+        min-height: 44px; /* Apple's recommended minimum touch target */
+    }
+    
+    .fieldLabel {
+        font-size: 13px;
+        margin: 1px 0 4px 0;
+    }
+    
+    .contact-options-container {
+        padding: 16px;
+    }
+    
+    .contact-option-item {
+        padding: 10px;
+        min-height: 44px;
+    }
+    
+    .formButton {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+    
+    /* Ultra-compact for very small screens */
+    #StateUnit {
+        flex: 0 0 100px;
+        max-width: 100px;
+    }
+    
+    #CityUnit {
+        flex: 2;
+    }
+    
+    .zipUnit {
+        flex: 0 0 85px;
+        max-width: 85px;
+        min-width: 80px;
+    }
+}
+
+/* ==========================================================================
+   ENHANCED CONTENT CONTAINER
+   ========================================================================== */
+
+@media screen and (max-width: 1330px) {
+    #contentInterior {
+        max-width: 90% !important;
+        width: 100% !important;
+        margin: auto;
+    }
+}
+
+/* ==========================================================================
+   SPECIAL CHECKBOX LIST CONFIGURATIONS
+   ========================================================================== */
+
+/* For checkbox lists that need specific styling */
+.cbl label {
+    padding-left: 5px;
+    font-weight: 500;
+    color: #374151;
+}
+
+#CBOptions {
+    color: #111111;
+    padding: 16px;
+    background: rgba(248, 250, 252, 0.9);
+    border-radius: 8px;
+    border: 2px solid #e5e7eb;
+}
+
+/* Hidden validation elements */
+.f-val {
+    display: none;
+}
+
+/* Focus management for form units */
+.form-unit:focus-within .fieldLabel {
+    color: #3b82f6;
+}
+
+.form-unit:focus-within {
+    z-index: 1;
+}
+
+/* Enhanced input focus ring for accessibility */
+.form-field:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+.contact-option-item:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.1);
+}
+
+.contact-option-item label{font-family:'Inter Tight', sans-serif; font-weight:300; font-size: clamp(15px, 3.5vw, 18px);}
+
+.contact-options-list {
+    display: flex;
+    flex-direction: column; /* Changed from row */
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact-option-item {
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    flex: 1 1 auto; /* Changed from 0 0 auto */
+    min-width: 0;
+    white-space: normal; /* Changed from nowrap */
+    display: flex;
+    align-items: flex-start; /* Changed from center */
+    width: 100%; /* Add this to ensure full width */
+}
+
+.contact-option-item label {
+    cursor: pointer;
+    line-height: 1.4;
+    flex: 1;
+    white-space: normal; /* Changed from nowrap */
+    margin: 0;
+    /* Remove overflow and text-overflow properties */
+}
+
+.contact-options-container {
+    padding: 10px 32px 10px 10px;
+       max-width: calc(100% - 40px); /* Leaves 16px margin on each side */
+}
